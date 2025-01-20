@@ -1,4 +1,10 @@
 --test account 1345467
+--ALTER SESSION SET NLS_DATE_FORMAT = 'DD-MON-RRRR HH24:MI:SS';
+
+
+
+select * from CBSONLP.saft;
+select * from PAYMENTS.ps029mb where bank_cd='173923';
 select * from payments.CA010MB  where LEGACY_AC IN ('MT103')  ;
 select * from payments.ps029mb where swift_code='CITIUS33XXX';
 select * from payments.ps028mb;
@@ -12,9 +18,13 @@ select * from cashcore.ps080tb where cr_acc like 'DE%';
 select * from payments.mc012bb where org_related_ref='S0643590D06A01';
 select * from idccore.tran2025;
 select * from idccore.tranbat2025;
+
 select * from data_sync.TMP_CBX_STM;
 select * from idccore.tran2024 where TRAN_VALUE_DATE>='01-JAN-25';
 select * from DATA_SYNC.tmp_cbx_stm;
+
+
+
 --payment advice
 select count(1) from payments.payment_advice_mail l where  trunc(l.mail_messagedatetime)='13-Nov-2024' and l.mail_success='V';
 select count(1) from payments.payment_advice_mail l where  trunc(l.mail_messagedatetime)='13-Nov-2024' and l.mail_success='F';
