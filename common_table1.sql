@@ -1,7 +1,12 @@
 --test account 1345467
 --ALTER SESSION SET NLS_DATE_FORMAT = 'DD-MON-RRRR HH24:MI:SS';
 
-
+select * from idccore.maincont;
+select * from data_sync.tmp_cbx_stm where KEYID like '0000-4298842%';
+select * from data_sync.ARCHIVE_INFO_DETAILS order by PROCESS_DATE desc;
+select * from data_sync.NO_BACKUP_AND_DELETE;
+--truncate table data_sync.tmp_cbx_stm;
+commit;
 
 select * from CBSONLP.saft;
 select * from PAYMENTS.ps029mb where bank_cd='173923';
